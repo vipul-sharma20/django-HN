@@ -16,7 +16,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        exclude = ("user","profile_picture","reputation")
+        exclude = ("user","reputation")
 
 class PostArticleForm(forms.ModelForm):
 
