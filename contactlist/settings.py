@@ -129,4 +129,4 @@ STATICFILES_DIRS = (BASE_DIR1+'/static',)
 #STATIC_ROOT = 'home/vipul/django-contactlist/collectstatic/'
 STATIC_ROOT = BASE_DIR1+'/collectstatic/'
 STATIC_URL = '/static/'
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
