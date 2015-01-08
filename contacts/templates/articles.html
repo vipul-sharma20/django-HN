@@ -1,0 +1,46 @@
+{% extends 'nav.html' %}
+{% load staticfiles %}
+{% block articles %}
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}" type="text/javascript">
+</script>
+</br></br></br>
+<div id='articles'>
+    {% for article in posts %}
+    <table>
+        <tr>
+            <td>
+                <button aid="{{ article.id }}" class="likes" type="button">Like</button>
+                </br>
+                <b class="{{ article.id }}"> {{ article.votes }}</b>
+            </td>
+            <td>
+                <tr>
+                    <b><font size="4">
+                        <a href={{ article.link }}>   {{ article.description }}</a>
+                    </b></font>
+                </tr>
+                <tr>
+                    <font size="2">
+                        <p id='register'>uploaded by : {{ article.uploader }}</p>
+                    </font>
+                </tr>
+                <tr>
+                    <font size="2">
+                        <p>at {{ article.time_stamp }}</p>
+                    </font>
+                </tr>
+                <tr>
+                    <font size="2">
+                        <p>
+                        <a href='/accounts/articles/comments/{{ article.id }}'>comment</a>
+                        </p>
+                    </font>
+                </tr>
+            </td>
+        </tr>
+    </table>
+        {% endfor %}
+</div>
+{% endblock %}

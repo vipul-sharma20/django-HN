@@ -1,0 +1,34 @@
+{% extends 'landing.html' %}
+
+{% block post %}
+<div align='center'>
+
+<form method='POST' action=''>
+    {% csrf_token %}
+    <table>
+    	<tr>
+    		<td>
+    			<h4 id="register">Description</h4>{{ form.description }}
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<h4 id="register">Link</h4>{{ form.link }}
+    		</td>
+    	</tr>
+	</table>
+	</br>
+  <div class="btn-group btn-group-justified">
+  
+   <p align='center'>
+   	<input type='submit' value='Post' align="center" class="btn btn-default" role="button"/>
+    </p>
+  </div>
+    
+</form>
+
+</br>
+  
+</div>
+{% endblock %}
+

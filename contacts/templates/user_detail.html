@@ -1,0 +1,17 @@
+{% extends "landing.html" %}
+
+{%block content %}
+<h2>{{ object.username }}'s Profile</h2>
+
+{% if object.location %}
+<div>
+    <b>Location</b>
+    {{ object.userprofile.location }}
+</div>
+{% endif %}
+
+{% if object.username == user.username %}
+<p><a href="{% url 'edit_profile' %}">Edit Profile</a></p>
+{% endif %}
+
+{% endblock %}

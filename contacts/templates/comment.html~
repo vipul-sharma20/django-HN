@@ -1,0 +1,49 @@
+{% extends 'landing.html' %}
+
+{% block comment %}
+<div align='center'>
+    <form method='POST' action=''>
+        {% csrf_token %}
+        <table>
+            {% if comments %}
+            <tr>
+                <td>
+                    <button aid="{{ article.id }}" class="likes" type="button">Like</button>
+                    </br>
+                    <b class="{{ article.id }}"> {{ article.votes }}</b>
+               </td>
+               <td>
+                    <b><font size="6">
+                    <a href={{ article.link }}>   {{ form.article.description }}</a>
+                    </font>
+                    </b>
+                    <font size="2">
+                     <p id='register'>uploaded by : {{ article.uploader }}
+                    </br>at {{ article.time_stamp }}</br>
+                    <a href='/accounts/articles/comments/{{ article.id }}'>comment</a>
+                    </p>
+                    </font>
+
+            </td>
+
+
+        </tr>
+
+                {% for comment in comments %}
+                    <tr>
+                        <td>
+                            <p>{{ comment.comment }} </br> by {{ comment.user }} on {{ comment.date }}</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tr>
+            {% endif %}
+            <tr>
+                <td>
+                    <h4 id='register'>Comment:</h4>{{ form.comment }}
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

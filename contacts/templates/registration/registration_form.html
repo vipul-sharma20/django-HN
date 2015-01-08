@@ -1,0 +1,32 @@
+
+{% block content %}
+<h2 align='center' id='register'>New User?</h2>
+{% if form.errors %}
+<p>Invalid data. Please try again.</p>
+{% endif %}
+<form method="post" action="">
+
+      {% csrf_token %}
+      <table align='center'>
+         <!-- <tr>
+            <td>
+                <h4 id="register">Username</h4>
+                        {{ form.username }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <h4 id="register">Email</h4>
+            {{ form.email }}
+            </td>
+        </tr> -->
+        <tr>
+            <td>
+                {{ form.as_p }}
+            </td>
+        </tr>
+
+          <input type="submit" value="Register" />
+      </table>
+      </form>
+      {% endblock %}
