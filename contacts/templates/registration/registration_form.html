@@ -8,25 +8,12 @@
 
       {% csrf_token %}
       <table align='center'>
-         <!-- <tr>
-            <td>
-                <h4 id="register">Username</h4>
-                        {{ form.username }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <h4 id="register">Email</h4>
-            {{ form.email }}
-            </td>
-        </tr> -->
         <tr>
             <td>
                 {{ form.as_p }}
             </td>
-        </tr>
-
           <input type="submit" value="Register" />
+      </tr>
       </table>
       </form>
       {% endblock %}
