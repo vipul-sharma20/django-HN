@@ -19,8 +19,6 @@ class UserProfile(models.Model):
     gender = models.CharField(max_length=140)
     reputation = models.IntegerField(default=1)
 
-    #profile_picture = models.ImageField(upload_to='%Y/%m/%d', blank=True, default = '/home/vipul/Photo13892.jpg')
-
     def __str__(self):
         return 'Profile of user : %s' % self.user.username
 
