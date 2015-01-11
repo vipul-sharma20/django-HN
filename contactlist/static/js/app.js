@@ -6,8 +6,4 @@ $(document).ready(function() {
                $("."+catid).html(data);
            });
 });
-   $(".comments").submit(function(){
-       var id;
-       id = $('.which').attr
-       $.get('/accounts/articles/comments/)
 });

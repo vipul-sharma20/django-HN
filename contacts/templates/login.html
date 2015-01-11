@@ -1,8 +1,8 @@
-{% extends "empty.html" %}
+{% extends "nav.html" %}
 {% load staticfiles %}
-
+{% block content %}
 <!DOCTYPE html>
-<html>
+<!--<html>
 <head>
 <link rel="stylesheet" type="text/css" href="{% static 'assets/mystyle.css' %}">
     <meta charset="utf-8">
@@ -30,10 +30,9 @@
 
 </head>
 <body>
+-->
 
-
- <div class="container">
-{% block login %}
+<div class="container">
 	</br></br>
 	 {% if form.errors %}
  	<p class="error"> Invalid username or password</p>
@@ -48,10 +47,6 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
+</div> <!-- /container  -->
+
 {% endblock %}
-    </div> <!-- /container -->
-
-
-
-</body>
-</html>

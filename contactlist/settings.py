@@ -21,6 +21,7 @@ MEDIA_URL = '/media/'
 LOGIN_EXEMPT_URLS = (
                     r'^accounts/auth/$',
                     r'^accounts/register/$',
+                    r'^accounts/register/complete/$',
                     r'^index/$',
                     r'^template/$',
                     r'^personal/$',

@@ -1,15 +1,17 @@
-{% extends 'landing.html' %}
-
-{% block comment %}
+{% extends 'nav.html' %}
+{% load staticfiles %}
+{% block content %}
+<script src="{% static 'js/comment.js' %}" type="text/javascript"> </script>
+</br></br></br>
 <div align='center'>
-    <form method='POST' action='' class='comments'>
+    <form method='POST' class="comments" action='' aid="{{ article_id }}">
         {% csrf_token %}
         <table>
             {% if comments %}
                 {% for comment in comments %}
                     <tr>
                         <td>
-                            <p>{{ comment.comment }} </br> by {{ comment.user }} on {{ comment.date }}</p>
+                            <p class="com">{{ comment.comment }} </br> by {{ comment.user }} on {{ comment.date }}</p>
                         </td>
                     </tr>
                 {% endfor %}

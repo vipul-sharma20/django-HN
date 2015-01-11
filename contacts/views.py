@@ -66,8 +66,8 @@ def loggedin(request, personal_id=1):
     try:
         return render_to_response('loggedin.html',
                                     {'full_name': request.user.username,
-                                    'location': UserProfile.objects.filter \
-                                    (user=request.user).location,
+                                    #'location': UserProfile.objects.filter \
+                                    #(user=request.user).location,
                                     'reputation':UserProfile.objects.filter(user=request.user).reputation,})
     except:
         return render_to_response('loggedin.html',
@@ -97,7 +97,7 @@ def register_user(request):
     return render_to_response('register.html', args)
 
 def register_success(request):
-    return render_to_response('register_success.html')
+    return render_to_response('loggedin.html')
 
 def personal_info(request):
     context = RequestContext(request)
@@ -122,7 +122,7 @@ class UserProfileEditView(UpdateView):
         return UserProfile.objects.get_or_create(user=self.request.user)[0]
 
     def get_success_url(self):
-        return HttpResponseRedirect('accounts/loggedin/')
+        return HttpResponseRedirect('/accounts/loggedin/')
 
 def article_view(request):
     model = Articles
@@ -190,15 +190,21 @@ def add_comment(request, article_id):
             temp.date = datetime.datetime.now()
             temp.article_id = article_id
             temp.save()
-            return HttpResponseRedirect('/accounts/loggedin/')
+            #return HttpResponse(temp.comment)
+            return HttpResponseRedirect('/accounts/articles/comments/'+str(article_id))
         else:
             print form.errors
     else:
         form = CommentForm()
     try:
         comments = Comment.objects.filter(article_id=article_id)
-        return render_to_response(template, {"form":form, "comments":comments},\
+        return render_to_response(template, {"form":form, "comments":comments, "article_id":article_id, "full_name":request.user.username},\
                                  RequestContext(request))
     except:
-        return render_to_response(template, {"form":form},\
-                                     RequestContext(request))
+        return render_to_response(template, {"form":form, "article_id":article_id, "full_name": request.user.username}, RequestContext(request))
+
+def recent_comarticles(request):
+    template = "recent_comm.html"
+    comments = Comment.objects.order_by('date').reverse()
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    return render_to_response(template, {"comments":comments, "now":now}, RequestContext(request))

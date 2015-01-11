@@ -1,0 +1,22 @@
+{% extends "nav.html" %}
+{% block content %}
+</br></br></br>
+<div>
+    <table>
+        {% if comments %}
+        {% for comment in comments %}
+        <tr>
+            <td>
+                {{ comment.comment }} 
+                </br>{{ comment.date|timesince:now }}
+                article: <a href="/accounts/articles/comments/{{ comment.article.id }}">
+                    {{ comment.article.description }}
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</div>
+{% endblock %}
+
