@@ -28,7 +28,6 @@ class UserProfileDetailView(DetailView):
         #queryset = UserProfile.objects.all()
         user = super(UserProfileDetailView, self).get_object(queryset)
         b = UserProfile.objects.get_or_create(user=user)
-        print b[0]
         return user
 
 def landing(request):
@@ -149,7 +148,7 @@ def article_view(request):
     posts = Articles.objects.all()
     score_dict = {}
     rend = []
-    print dir(posts[0])
+    #print dir(posts[0])
     for post in posts:
         diff = post.time_stamp - datetime.datetime.utcnow().replace(tzinfo=utc)
         t = abs((diff.days)) * 24 + diff.seconds/3600
