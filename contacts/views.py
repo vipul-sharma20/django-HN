@@ -19,13 +19,19 @@ import time
 class UserProfileDetailView(DetailView):
     """User Profile in detail view"""
     model = get_user_model()
+    #model = UserProfile
+    queryset = model.objects.all()
+    print queryset[0].userprofile.reputation
     slug_field = "username"
-    template_name = "user_detail.html"
+    template_name= "user_detail.html"
+
+    """template_name = "user_detail.html"
 
     def get_object(self, queryset=None):
+        #queryset = UserProfile.objects.all()
         user = super(UserProfileDetailView, self).get_object(queryset)
         UserProfile.objects.get_or_create(user=user)
-        return user
+        return user"""
 
 def landing(request):
     name = 'Foo Bar'
@@ -112,6 +118,16 @@ def personal_info(request):
          form = PersonalForm()
     return render_to_response('personal_form.html', {'form': form}, context)
 
+"""def user_profile_edit(request):
+
+    model = UserProfile
+    template_name = 'user_edit.html'
+    form_class = UserForm
+
+    if request.method == 'POST':
+        return HttpResponseRedirect('/accounts/loggedin')
+    else:
+        return UserProfile.objects.get_or_create(user=request.user)[0]"""
 class UserProfileEditView(UpdateView):
 
     model = UserProfile
@@ -119,10 +135,16 @@ class UserProfileEditView(UpdateView):
     template_name = 'user_edit.html'
 
     def get_object(self, queryset=None):
-        return UserProfile.objects.get_or_create(user=self.request.user)[0]
+        a = UserProfile.objects.get(user=self.request.user)
+        print dir(a)
+        return a
 
-    def get_success_url(self):
-        return HttpResponseRedirect('/accounts/loggedin/')
+    def form_valid(self, form):
+        instance = form.instance
+        instance.user = self.request.user
+        instance.save()
+        print 'here'
+        return HttpResponseRedirect('/accounts/loggedin')
 
 def article_view(request):
     model = Articles

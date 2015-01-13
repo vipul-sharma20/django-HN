@@ -1,7 +1,8 @@
-
-{% block profile %}
+{% extends 'nav.html' %}
+{% block content %}
+</br></br></br>
 <div align=center>
-<form method='post' action =''>
+<form method='POST' action =''>
     {% csrf_token %}
     <table>
     	<tr>
@@ -10,7 +11,7 @@
     		</td>
     		<td>
    				{{ form.location }}
-   			</td> 
+   			</td>
 
    		</tr>
    		<tr>
@@ -19,16 +20,15 @@
     		</td>
     		     		<td>
    				{{ form.gender }}
-   			</td> 		
-   		</tr>	
+   			</td>
+   		</tr>
     </table>
     <div class="btn-group btn-group-justified">
-  
+
    <p align='center'>
    	<input type='submit' value='Update' align="center" class="btn btn-default" role="button"/>
     </p>
   </div>
-    
 </form>
 </div>
 {% endblock %}

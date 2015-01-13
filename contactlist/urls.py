@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required as auth
 from django.conf import settings
 from django.conf.urls.static import static
-from contacts.views import UserProfileEditView, UserProfileDetailView
+from contacts.views import  UserProfileDetailView, UserProfileEditView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r"^accounts/", include("registration.backends.simple.urls")),
     #url(r'^accounts/register/complete/$', 'contacts.views.register_success'),
     url(r'^personal/$', contacts.views.personal_info, name='personal',),
+    #url(r'^user/$', 'contacts.views.user_profile_edit'),
     url(r'^user/$', auth(UserProfileEditView.as_view()), name='edit_profile'),
     url(r'^users/(?P<slug>\w+)/$', auth(UserProfileDetailView.as_view()), name='profile'),
     url(r'^', include('contacts.urls')),
