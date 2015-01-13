@@ -7,14 +7,13 @@
 </script>
 </br></br></br>
 <div>
-    <table border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
-    <tr>
-    <td>
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px">
+    <table class="table table-striped table-condensed table-hover" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px">
         {% for article in posts %}
         <tr>
-            <td>
-                <button aid="{{ article.id }}" class="likes" type="button">Like</button>
+            <td style="text-align:center">
+                <button aid="{{ article.id }}" class="btn btn-lg btn-custom" type="button">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                </button>
                 </br>
                 <b class="{{ article.id }}"> {{ article.votes }}</b>
             </td>
@@ -22,13 +21,9 @@
                     <font size="4">
                         <a href={{ article.link }}>   {{ article.description }}</a>
                     </font>
-            </td>
-        </tr>
-        <tr>
-            <td colspan=0></td>
-            <td>
+                    </br>
                 <font size="2">
-                uploaded by : {{ article.uploader }}
+                    uploaded by : <a href="/users/{{ article.uploader }}">{{ article.uploader }}</a>
                 </font>
                     <font size="2">
                         at {{ article.time_stamp }}
@@ -41,7 +36,5 @@
         </tr>
         {% endfor %}
     </table>
-    </td>
-    </tr>
 </div>
 {% endblock %}

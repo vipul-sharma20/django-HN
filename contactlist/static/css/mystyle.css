@@ -17,3 +17,13 @@
 {
     background-color: #fff;
 }
+.btn-custom {
+        background-color: #FFFFFF;
+        border-color: #CCCCCC;
+        color: #333333;
+            }
+.btn-custom:hover {
+        background-color: #FFF;
+        border-color: #fff;
+        color: #333333;
+        }

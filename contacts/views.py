@@ -4,7 +4,7 @@ from django.template import Context, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView
-from contacts.models import Contact, UserProfile, Articles, Like, Comment
+from contacts.models import User, Contact, UserProfile, Articles, Like, Comment
 from contacts.forms import UserForm, PostArticleForm, CommentForm
 from django.views.generic.edit import CreateView
 from django.contrib import auth
@@ -15,23 +15,21 @@ from django.core.urlresolvers import reverse
 from django.utils.timezone import utc
 import datetime
 import time
+import operator
 
 class UserProfileDetailView(DetailView):
     """User Profile in detail view"""
-    model = get_user_model()
-    #model = UserProfile
-    queryset = model.objects.all()
-    print queryset[0].userprofile.reputation
+
+    queryset = User.objects.all()
     slug_field = "username"
     template_name= "user_detail.html"
-
-    """template_name = "user_detail.html"
 
     def get_object(self, queryset=None):
         #queryset = UserProfile.objects.all()
         user = super(UserProfileDetailView, self).get_object(queryset)
-        UserProfile.objects.get_or_create(user=user)
-        return user"""
+        b = UserProfile.objects.get_or_create(user=user)
+        print b[0]
+        return user
 
 def landing(request):
     name = 'Foo Bar'
@@ -150,18 +148,21 @@ def article_view(request):
     model = Articles
     posts = Articles.objects.all()
     score_dict = {}
+    rend = []
+    print dir(posts[0])
     for post in posts:
         diff = post.time_stamp - datetime.datetime.utcnow().replace(tzinfo=utc)
         t = abs((diff.days)) * 24 + diff.seconds/3600
         """ranking"""
         score = (post.votes-1)/((t+2)**1.8)
         post.score = score
+        score_dict[post] = [score]
+
     for w in sorted(score_dict, key=score_dict.get, reverse=True):
-        score_dict[w]
-    print type(posts)
-    if request.method == 'GET':
-        pass
-    return render_to_response('articles.html', {'posts':posts, 'full_name':request.user.username,},
+        rend.append(w)
+        print w.description, w.score
+
+    return render_to_response('articles.html', {'posts':rend, 'full_name':request.user.username,},
             context_instance=RequestContext(request))
 
 def post_article_view(request):
@@ -196,7 +197,7 @@ def like_article(request, article_id):
     if created:
         b = UserProfile.objects.get(user=rep_user)
         b.reputation += 10
-        print b.reputation
+        #print b.reputation
         b.save()
     a.save()
     return HttpResponse(a.votes)
