@@ -2,16 +2,19 @@
 {% block content %}
 </br></br></br>
 <div>
-    <table>
+    <table class="table table-striped table-condensed table-hover">
         {% if comments %}
         {% for comment in comments %}
-        <tr>
+        <tr class="com">
             <td>
                 {{ comment.comment }} 
-                </br>{{ comment.date|timesince:now }}
+                </br>
+                <font size="1">
+                {{ comment.date|timesince:now }} ago
                 article: <a href="/accounts/articles/comments/{{ comment.article.id }}">
                     {{ comment.article.description }}
                 </a>
+                </font>
             </td>
         </tr>
         {% endfor %}

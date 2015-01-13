@@ -6,7 +6,7 @@
 
 <form method='POST' action=''>
     {% csrf_token %}
-    <table>
+    <table class="table table-condensed table-hover">
     	<tr>
     		<td>
     			<h4 id="register">Description</h4>{{ form.description }}
@@ -17,15 +17,14 @@
     			<h4 id="register">Link</h4>{{ form.link }}
     		</td>
     	</tr>
-	</table>
-	</br>
-  <div class="btn-group btn-group-justified">
-  
-   <p align='center'>
-   	<input type='submit' value='Post' align="center" class="btn btn-default" role="button"/>
-    </p>
-  </div>
-    
+        <tr>
+            <td>
+                <p align='center'>
+   	            <input type='submit' value='Post' align="center" class="btn btn-default" role="button"/>
+                </p>
+            </td>
+        </tr>
+    </table>
 </form>
 
 </br>

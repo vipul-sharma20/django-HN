@@ -35,7 +35,7 @@ def landing(request):
     t = get_template('landing.html')
     if request.user.is_authenticated():
         #html = t.render(Context({'name': request.user.username}))
-        return HttpResponseRedirect('/accounts/loggedin')
+        return HttpResponseRedirect('/accounts/articles')
     else:
         return render_to_response('landing.html')
 
@@ -50,7 +50,7 @@ def login(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated():
-       return HttpResponseRedirect('/accounts/loggedin')
+       return HttpResponseRedirect('/accounts/articles')
     else:
         return render_to_response('login.html', c)
 
@@ -61,25 +61,25 @@ def auth_view(request):
 
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/accounts/loggedin')
+        return HttpResponseRedirect('/accounts/articles')
     else:
         return HttpResponseRedirect('/accounts/invalid')
 
 def loggedin(request, personal_id=1):
     try:
-        return render_to_response('loggedin.html',
+        return render_to_response('articles.html',
                                     {'full_name': request.user.username,
                                     #'location': UserProfile.objects.filter \
                                     #(user=request.user).location,
                                     'reputation':UserProfile.objects.filter(user=request.user).reputation,})
     except:
-        return render_to_response('loggedin.html',
+        return render_to_response('articles.html',
                                     {'full_name': request.user.username,
                                     'location': 'NA'})
 
 def invalid_login(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect('/accounts/loggedin')
+        return HttpResponseRedirect('/accounts/articles')
     else:
         return render_to_response('invalid_login.html')
 
@@ -100,7 +100,7 @@ def register_user(request):
     return render_to_response('register.html', args)
 
 def register_success(request):
-    return render_to_response('loggedin.html')
+    return render_to_response('articles.html')
 
 def personal_info(request):
     context = RequestContext(request)
@@ -141,7 +141,7 @@ class UserProfileEditView(UpdateView):
         instance.user = self.request.user
         instance.save()
         print 'here'
-        return HttpResponseRedirect('/accounts/loggedin')
+        return HttpResponseRedirect('/accounts/articles')
 
 def article_view(request):
     model = Articles
@@ -175,7 +175,7 @@ def post_article_view(request):
             temp.uploader = request.user
             temp.time_stamp = datetime.datetime.now()
             temp.save()
-            return HttpResponseRedirect('/accounts/loggedin/')
+            return HttpResponseRedirect('/accounts/articles/')
         else:
             print form.errors
     else:
