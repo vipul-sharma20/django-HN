@@ -1,19 +1,74 @@
-
+{% extends 'nav.html' %}
+{% load staticfiles %}
 {% block content %}
-<h2 align='center' id='register'>New User?</h2>
+<div class="register_page">
+</br></br></br>
 {% if form.errors %}
-<p>Invalid data. Please try again.</p>
+<p>{{ form.errors }}</p>
 {% endif %}
-<form method="post" action="">
-
+<h1 align="center" class="heading">Register</h1>
+<div class="container reg">
+<div class="row">
+<div class=".col-md-6 .col-md-offset-3">
+<table class="table table-border heading" align="center">
+    <form method="post" action="">
       {% csrf_token %}
-      <table align='center'>
-        <tr>
+      <tr>
+          <td style="text-align:right">
+              <p>Username:</p>
+          </td>
             <td>
-                {{ form.as_p }}
+                {% if form.username.errors %}
+                    <p>{{ form.username.errors }}</p>
+                    {% endif %}
+                {{ form.username }}
             </td>
-          <input type="submit" value="Register" />
-      </tr>
-      </table>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            <p>Email:</p>
+        </td>
+        <td>
+            {% if form.email.errors %}
+                <p>{{ form.email.errors }}</p>
+            {% endif %}
+            {{ form.email }}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            <p>Password: </p>
+        </td>
+        <td>
+            {% if form.password1.errors %}
+                <p>{{ form.password1.errors }}</p>
+                {% endif %}
+            {{ form.password1 }}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            <p>Re-type Password:</P>
+        </td>
+        <td>
+            {% if form.paassword2.errors %}
+            <p>{{ form.password2.errors }}</p>
+            {% endif %}
+
+            {{ form.password2 }}
+        </td>
+    </tr>
+
+            <tr style="text-align:left">
+                <td></td>
+                <td>
+                <input type="submit" class="btn btn-default" value="Register"/>
+                </td>
+            </tr>
       </form>
-      {% endblock %}
+  </table>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

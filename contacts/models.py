@@ -42,4 +42,4 @@ class Comment(models.Model):
     user = models.ForeignKey(User)
     article = models.ForeignKey(Articles)
     date = models.DateTimeField(auto_now_add=True)
-    comment = models.CharField(max_length=255,)
+    comment = models.CharField(max_length=150,)

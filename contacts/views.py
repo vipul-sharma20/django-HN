@@ -148,6 +148,7 @@ def article_view(request):
     posts = Articles.objects.all()
     score_dict = {}
     rend = []
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
     #print dir(posts[0])
     for post in posts:
         diff = post.time_stamp - datetime.datetime.utcnow().replace(tzinfo=utc)
@@ -161,7 +162,7 @@ def article_view(request):
         rend.append(w)
         print w.description, w.score
 
-    return render_to_response('articles.html', {'posts':rend, 'full_name':request.user.username,},
+    return render_to_response('articles.html', {'posts':rend, 'full_name':request.user.username, 'now':now},
             context_instance=RequestContext(request))
 
 def post_article_view(request):
