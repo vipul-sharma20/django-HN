@@ -162,12 +162,16 @@ def article_view(request):
         rend.append(w)
         print w.description, w.score
 
-    return render_to_response('articles.html', {'posts':rend, 'full_name':request.user.username, 'now':now},
+    print dir(UserProfile.objects.get(user=request.user))
+    return render_to_response('articles.html', {'posts':rend, \
+            'full_name':request.user.username, 'now':now, \
+            'reputation':UserProfile.objects.get(user=request.user).reputation}, \
             context_instance=RequestContext(request))
 
 def post_article_view(request):
     model = Articles
     template_name = 'post_articles.html'
+    p = Articles.objects.filter(time_stamp__range=['2015-01-12'])
 
     if request.method == 'POST':
         form = PostArticleForm(request.POST)

@@ -2,24 +2,31 @@
 
 {% block content %}
 </br></br>
-<div align='center'>
+<div class='container post'>
 
 <form method='POST' action=''>
     {% csrf_token %}
-    <table class="table table-condensed table-hover">
+    <table class="table table-condensed" align="center">
     	<tr>
-    		<td>
-    			<h4 id="register">Description</h4>{{ form.description }}
-    		</td>
+    		<td style="text-align:right">
+    		    <p class="postform">Description:</p>
+                </td>
+                <td style="text-align:left">
+                    {{ form.description }}
+                </td>
     	</tr>
     	<tr>
-    		<td>
-    			<h4 id="register">Link</h4>{{ form.link }}
+    		<td style="text-align:right">
+    			<p class="postform">Link:</p>
     		</td>
+                <td style="text-align:left">
+                    {{ form.link }}
+                </td>
     	</tr>
         <tr>
+            <td></td>
             <td>
-                <p align='center'>
+                <p align='left'>
    	            <input type='submit' value='Post' align="center" class="btn btn-default" role="button"/>
                 </p>
             </td>
@@ -27,8 +34,7 @@
     </table>
 </form>
 
-</br>
-  
+</br
 </div>
 {% endblock %}
 
