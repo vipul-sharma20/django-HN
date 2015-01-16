@@ -4,7 +4,7 @@ from django.template import Context, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView
-from contacts.models import User, Contact, UserProfile, Articles, Like, Comment
+from contacts.models import User, Contact, UserProfile, Articles, Like, Comment, News
 from contacts.forms import UserForm, PostArticleForm, CommentForm
 from django.views.generic.edit import CreateView
 from django.contrib import auth
@@ -235,3 +235,9 @@ def recent_comarticles(request):
     comments = Comment.objects.order_by('date').reverse()
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
     return render_to_response(template, {"comments":comments, "now":now}, RequestContext(request))
+
+def news(request):
+
+    template = "news.html"
+    articles = News.objects.all()
+    return render_to_response(template, {'news':articles}, RequestContext(request))

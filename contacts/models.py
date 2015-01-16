@@ -43,3 +43,9 @@ class Comment(models.Model):
     article = models.ForeignKey(Articles)
     date = models.DateTimeField(auto_now_add=True)
     comment = models.CharField(max_length=150,)
+
+class News(models.Model):
+
+    text = models.CharField(max_length=255,)
+    link = models.URLField(max_length=255,)
+    timestamp = models.CharField(max_length=100,)

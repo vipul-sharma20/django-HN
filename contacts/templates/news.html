@@ -1,0 +1,18 @@
+{% extends 'nav.html' %}
+{% load staticfiles %}
+{% block content %}
+</br></br></br>
+<div>
+    <table class='table table-bordered'>
+    {% for article in news %}
+        <tr>
+            <td>
+            <a href="{{ article.link }}">{{ article.text }}</a>
+            </br>
+            {{ article.timestamp }}
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}

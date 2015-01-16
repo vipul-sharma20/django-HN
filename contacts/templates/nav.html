@@ -46,13 +46,15 @@
                         <a href="/accounts/articles/comments/newest">Comments</a>
                     </li>
                     <li>
-                        <a href="#">New</a>
+                        <a href="/accounts/news/">News</a>
                     </li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+                    {% if full_name %}
                     <li>
                     <a href="/users/{{ full_name }}">{{ full_name }} ({{ reputation }})</a>
                     </li>
+                    {% endif %}
                     <li>
                         <a href="/accounts/logout/">Logout</a>
                     <li>

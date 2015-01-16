@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^accounts/articles/like/(?P<article_id>\d+)/$', 'contacts.views.like_article'),
     url(r"^accounts/articles/comments/(?P<article_id>\d+)/$", "contacts.views.add_comment"),
     url(r'accounts/articles/comments/newest/$', 'contacts.views.recent_comarticles'),
+    url(r'accounts/news/$', 'contacts.views.news'),
     url(r'^$', 'contacts.views.landing'),
 
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
