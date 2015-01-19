@@ -13,6 +13,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
 from django.core.urlresolvers import reverse
 from django.utils.timezone import utc
+from django.contrib.auth.decorators import login_required
 import datetime
 import time
 import operator

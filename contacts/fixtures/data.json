@@ -3,144 +3,153 @@
     "pk": 1, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Glass Is Not\u00a0Dead", 
-      "link": "http://techcrunch.com/2015/01/16/google-glass-is-not-dead/", 
-      "timestamp": "2015-01-16 10:41:11"
+      "text": "Every Song Evan Spiegel\u2019s Ever Tweeted, In One\u00a0Playlist", 
+      "link": "http://techcrunch.com/2015/01/17/snapjams/", 
+      "timestamp": "2015-01-17"
     }
   }, 
   {
     "pk": 2, 
     "model": "contacts.news", 
     "fields": {
-      "text": "The Magic Of Marketplace Expansion\u00a0Playbooks", 
-      "link": "http://techcrunch.com/2015/01/16/expansion-playbook/", 
-      "timestamp": "2015-01-16 10:00:25"
+      "text": "The Robots Are Coming \u2014 Aren\u2019t\u00a0They?", 
+      "link": "http://techcrunch.com/2015/01/17/the-robots-are-coming-arent-they/", 
+      "timestamp": "2015-01-17"
     }
   }, 
   {
     "pk": 3, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Elon Musk Tries To Woo John Carmack Back To Rockets With SpaceX\u2019s Drone Ship\u00a0Impact", 
-      "link": "http://techcrunch.com/2015/01/16/elon-musk-tries-to-woo-john-carmack-back-to-rockets-with-spacexs-drone-ship-impact/", 
-      "timestamp": "2015-01-16 08:07:23"
+      "text": "The Seed Bubble Has\u00a0Popped", 
+      "link": "http://techcrunch.com/2015/01/16/the-seed-bubble-has-popped/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 4, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Facebook Open-Sources Some Of Its Deep-Learning\u00a0Tools", 
-      "link": "http://techcrunch.com/2015/01/16/facebook-open-sources-some-of-its-deep-learning-tools/", 
-      "timestamp": "2015-01-16 08:00:47"
+      "text": "Bitcoin Will Fix Remittances With Or Without The Western Unions Of The\u00a0World", 
+      "link": "http://techcrunch.com/2015/01/16/how-western-union-and-others-can-avoid-becoming-the-blockbuster-video-of-finance/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 5, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Glass Never Really Had A Fighting\u00a0Chance", 
-      "link": "http://techcrunch.com/2015/01/16/google-glass-never-really-had-a-fighting-chance/", 
-      "timestamp": "2015-01-16 07:43:04"
+      "text": "Google Is In Talks With Mobile Payments Company\u00a0Softcard", 
+      "link": "http://techcrunch.com/2015/01/16/softcard/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 6, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Partners At Teehan+Lax, The Design Firm Behind Medium, Join\u00a0Facebook", 
-      "link": "http://techcrunch.com/2015/01/16/partners-at-teehanlax-the-design-firm-behind-medium-join-facebook/", 
-      "timestamp": "2015-01-16 06:50:12"
+      "text": "Google Glass Is Not\u00a0Dead", 
+      "link": "http://techcrunch.com/2015/01/16/google-glass-is-not-dead/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 7, 
     "model": "contacts.news", 
     "fields": {
-      "text": "A Million-Dollar Robot Suit Is Available On Amazon\u00a0Japan", 
-      "link": "http://techcrunch.com/2015/01/16/a-million-dollar-robot-suit-is-available-on-amazon-japan/", 
-      "timestamp": "2015-01-16 05:28:32"
+      "text": "Elon Musk Tries To Woo John Carmack Back To Rockets With SpaceX\u2019s Drone Ship\u00a0Impact", 
+      "link": "http://techcrunch.com/2015/01/16/elon-musk-tries-to-woo-john-carmack-back-to-rockets-with-spacexs-drone-ship-impact/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 8, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Hands On With Xiaomi\u2019s Mi Note\u00a0Phablet", 
-      "link": "http://techcrunch.com/2015/01/15/mi-note-hands-on/", 
-      "timestamp": "2015-01-15 08:27:58"
+      "text": "Facebook Open-Sources Some Of Its Deep-Learning\u00a0Tools", 
+      "link": "http://techcrunch.com/2015/01/16/facebook-open-sources-some-of-its-deep-learning-tools/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 9, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Monument Valley Team Reveals The Cost And Reward Of Making A Hit iOS\u00a0Game", 
-      "link": "http://techcrunch.com/2015/01/15/monument-valley-team-reveals-the-cost-and-reward-of-making-a-hit-ios-game/", 
-      "timestamp": "2015-01-15 12:57:10"
+      "text": "Google Glass Never Really Had A Fighting\u00a0Chance", 
+      "link": "http://techcrunch.com/2015/01/16/google-glass-never-really-had-a-fighting-chance/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 10, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Dating Service Zoosk Lays Off 15% Of Staff, Company\u00a0Confirms", 
-      "link": "http://techcrunch.com/2015/01/15/dating-service-zoosk-lays-off-15-of-staff-company-confirms/", 
-      "timestamp": "2015-01-15 11:22:34"
+      "text": "A Million-Dollar Robot Suit Is Available On Amazon\u00a0Japan", 
+      "link": "http://techcrunch.com/2015/01/16/a-million-dollar-robot-suit-is-available-on-amazon-japan/", 
+      "timestamp": "2015-01-16"
     }
   }, 
   {
     "pk": 11, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Elon Musk Will Build A Hyperloop Track For Ultra-High Speed Transport\u00a0Tests", 
-      "link": "http://techcrunch.com/2015/01/15/elon-musk-will-build-a-hyperloop-track-for-ultra-high-speed-transport-tests/", 
-      "timestamp": "2015-01-15 11:21:38"
+      "text": "Monument Valley Team Reveals The Cost And Reward Of Making A Hit iOS\u00a0Game", 
+      "link": "http://techcrunch.com/2015/01/15/monument-valley-team-reveals-the-cost-and-reward-of-making-a-hit-ios-game/", 
+      "timestamp": "2015-01-15"
     }
   }, 
   {
     "pk": 12, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Glass Explorer Program Shuts Down, Team Now Reports To Tony\u00a0Fadell", 
-      "link": "http://techcrunch.com/2015/01/15/google-glass-exits-x-labs-as-explorer-program-shuts-down-team-now-reports-to-tony-fadell/", 
-      "timestamp": "2015-01-15 10:37:57"
+      "text": "Xiaomi Launches Mi Note Phablet To Fight The iPhone 6\u00a0Plus", 
+      "link": "http://techcrunch.com/2015/01/15/mi-note/", 
+      "timestamp": "2015-01-15"
     }
   }, 
   {
     "pk": 13, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Classpass Is In Session With $40 Million In Series\u00a0B", 
-      "link": "http://techcrunch.com/2015/01/15/classpass-is-in-session-with-40-million-in-series-b/", 
-      "timestamp": "2015-01-15 08:11:48"
+      "text": "This Fake Phone Charger Is Actually Recording Every Key You\u00a0Type", 
+      "link": "http://techcrunch.com/2015/01/14/this-fake-phone-charger-is-actually-recording-every-key-you-type/", 
+      "timestamp": "2015-01-14"
     }
   }, 
   {
     "pk": 14, 
     "model": "contacts.news", 
     "fields": {
-      "text": "This Fake Phone Charger Is Actually Recording Every Key You\u00a0Type", 
-      "link": "http://techcrunch.com/2015/01/14/this-fake-phone-charger-is-actually-recording-every-key-you-type/", 
-      "timestamp": "2015-01-14 03:47:19"
+      "text": "Facebook Unveils Facebook At Work, Lets Businesses Create Their Own Social\u00a0Networks", 
+      "link": "http://techcrunch.com/2015/01/14/facebook-at-work-ios-android/", 
+      "timestamp": "2015-01-14"
     }
   }, 
   {
     "pk": 15, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Facebook Unveils Facebook At Work, Lets Businesses Create Their Own Social\u00a0Networks", 
-      "link": "http://techcrunch.com/2015/01/14/facebook-at-work-ios-android/", 
-      "timestamp": "2015-01-14 06:01:13"
+      "text": "The New IBM z13 Is Not Your Father\u2019s\u00a0Mainframe", 
+      "link": "http://techcrunch.com/2015/01/13/the-new-ibm-z13-is-not-your-fathers-mainframe/", 
+      "timestamp": "2015-01-13"
     }
   }, 
   {
     "pk": 16, 
     "model": "contacts.news", 
     "fields": {
+      "text": "Google Domains Launches To All In U.S. With Support For Blogger Integration, Templates And More Domain\u00a0Endings", 
+      "link": "http://techcrunch.com/2015/01/13/google-domains-launches-to-all-in-u-s-with-support-for-blogger-integration-templates-and-more-domain-endings/", 
+      "timestamp": "2015-01-13"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "contacts.news", 
+    "fields": {
       "text": "East of Palo Alto\u2019s Eden: Race and The Formation of Silicon\u00a0Valley", 
       "link": "http://techcrunch.com/2015/01/10/east-of-palo-altos-eden/", 
-      "timestamp": "2015-01-10 02:08:55"
+      "timestamp": "2015-01-10"
     }
   }
 ]
