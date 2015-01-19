@@ -7,7 +7,7 @@
     {% for article in news %}
         <tr>
             <td>
-            <a href="{{ article.link }}">{{ article.text }}</a>
+                <a href="/accounts/news/{{ article.id }}/">{{ article.text }}</a>
             </br>
             {{ article.timestamp }}
         </td>

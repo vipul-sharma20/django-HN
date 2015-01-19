@@ -4,7 +4,7 @@ from django.template import Context, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView
-from contacts.models import User, Contact, UserProfile, Articles, Like, Comment, News
+from contacts.models import User, Contact, UserProfile, Articles, Like, Comment, News, NewsContent
 from contacts.forms import UserForm, PostArticleForm, CommentForm
 from django.views.generic.edit import CreateView
 from django.contrib import auth
@@ -20,15 +20,17 @@ import operator
 class UserProfileDetailView(DetailView):
     """User Profile in detail view"""
 
-    queryset = User.objects.all()
+    #queryset = User.objects.filter(sel)
     slug_field = "username"
     template_name= "user_detail.html"
 
     def get_object(self, queryset=None):
-        #queryset = UserProfile.objects.all()
+        queryset = User.objects.filter(username=self.request.user)
         user = super(UserProfileDetailView, self).get_object(queryset)
         b = UserProfile.objects.get_or_create(user=user)
-        return user
+        c = UserProfile.objects.filter(user=user)
+        print dir(c)
+        return c
 
 def landing(request):
     name = 'Foo Bar'
@@ -171,8 +173,13 @@ def article_view(request):
 def post_article_view(request):
     model = Articles
     template_name = 'post_articles.html'
-    p = Articles.objects.filter(time_stamp__range=['2015-01-12'])
-
+    today_min = datetime.datetime.combine(datetime.date.today(), datetime.time.min)
+    today_max = datetime.datetime.combine(datetime.date.today(), datetime.time.max)
+    p = Articles.objects.filter(uploader=request.user, time_stamp__range=(today_min, today_max))
+    print p.count()
+    if p.count() > 3:
+        return HttpResponse("Max post limit for today reached! try posting \
+                        tomorrow </br><a href='/accounts/articles/'>home</a>")
     if request.method == 'POST':
         form = PostArticleForm(request.POST)
         if form.is_valid():
@@ -240,4 +247,12 @@ def news(request):
 
     template = "news.html"
     articles = News.objects.all()
-    return render_to_response(template, {'news':articles}, RequestContext(request))
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    return render_to_response(template, {'news':articles, 'now':now}, RequestContext(request))
+
+def newscontent(request, news_id):
+
+    template = "content.html"
+    content = NewsContent.objects.get(id=news_id)
+    print dir(content)
+    return HttpResponse(content.content)

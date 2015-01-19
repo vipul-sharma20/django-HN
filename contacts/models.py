@@ -48,4 +48,8 @@ class News(models.Model):
 
     text = models.CharField(max_length=255,)
     link = models.URLField(max_length=255,)
-    timestamp = models.CharField(max_length=100,)
+    timestamp = models.CharField(max_length=20,)
+
+class NewsContent(models.Model):
+
+    content = models.TextField()
