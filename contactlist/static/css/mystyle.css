@@ -35,7 +35,8 @@
         }
 .heading
 {
-    font-family: 'Lobster Two', cursive;
+    /* font-family: 'Lobster Two', cursive; */
+    font-family:Trebuchet MS, Helvetica, sans-serif;
 }
 .logo-center{
   border:inherit 8px #000000;
