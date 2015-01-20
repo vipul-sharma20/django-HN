@@ -21,8 +21,8 @@ class Migration(SchemaMigration):
         db.create_table(u'contacts_userprofile', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('user', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['auth.User'], unique=True)),
-            ('location', self.gf('django.db.models.fields.CharField')(max_length=140)),
-            ('gender', self.gf('django.db.models.fields.CharField')(max_length=140)),
+            ('about', self.gf('django.db.models.fields.CharField')(max_length=140)),
+            ('website', self.gf('django.db.models.fields.URLField')(max_length=140)),
             ('reputation', self.gf('django.db.models.fields.IntegerField')(default=1)),
         ))
         db.send_create_signal(u'contacts', ['UserProfile'])
@@ -53,9 +53,35 @@ class Migration(SchemaMigration):
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
             ('article', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contacts.Articles'])),
             ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('comment', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('comment', self.gf('django.db.models.fields.CharField')(max_length=150)),
         ))
         db.send_create_signal(u'contacts', ['Comment'])
+
+        # Adding model 'News'
+        db.create_table(u'contacts_news', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('text', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('link', self.gf('django.db.models.fields.URLField')(max_length=255)),
+            ('timestamp', self.gf('django.db.models.fields.CharField')(max_length=20)),
+        ))
+        db.send_create_signal(u'contacts', ['News'])
+
+        # Adding model 'NewsContent'
+        db.create_table(u'contacts_newscontent', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('content', self.gf('django.db.models.fields.TextField')()),
+        ))
+        db.send_create_signal(u'contacts', ['NewsContent'])
+
+        # Adding model 'ContactUs'
+        db.create_table(u'contacts_contactus', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('first_name', self.gf('django.db.models.fields.CharField')(max_length=120)),
+            ('last_name', self.gf('django.db.models.fields.CharField')(max_length=120)),
+            ('email', self.gf('django.db.models.fields.EmailField')(max_length=75)),
+            ('message', self.gf('django.db.models.fields.CharField')(max_length=255)),
+        ))
+        db.send_create_signal(u'contacts', ['ContactUs'])
 
 
     def backwards(self, orm):
@@ -73,6 +99,15 @@ class Migration(SchemaMigration):
 
         # Deleting model 'Comment'
         db.delete_table(u'contacts_comment')
+
+        # Deleting model 'News'
+        db.delete_table(u'contacts_news')
+
+        # Deleting model 'NewsContent'
+        db.delete_table(u'contacts_newscontent')
+
+        # Deleting model 'ContactUs'
+        db.delete_table(u'contacts_contactus')
 
 
     models = {
@@ -117,7 +152,7 @@ class Migration(SchemaMigration):
         u'contacts.comment': {
             'Meta': {'object_name': 'Comment'},
             'article': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['contacts.Articles']"}),
-            'comment': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'comment': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"})
@@ -129,6 +164,14 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
+        u'contacts.contactus': {
+            'Meta': {'object_name': 'ContactUs'},
+            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75'}),
+            'first_name': ('django.db.models.fields.CharField', [], {'max_length': '120'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '120'}),
+            'message': ('django.db.models.fields.CharField', [], {'max_length': '255'})
+        },
         u'contacts.like': {
             'Meta': {'object_name': 'Like'},
             'article': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['contacts.Articles']"}),
@@ -136,13 +179,25 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"})
         },
+        u'contacts.news': {
+            'Meta': {'object_name': 'News'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'link': ('django.db.models.fields.URLField', [], {'max_length': '255'}),
+            'text': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'timestamp': ('django.db.models.fields.CharField', [], {'max_length': '20'})
+        },
+        u'contacts.newscontent': {
+            'Meta': {'object_name': 'NewsContent'},
+            'content': ('django.db.models.fields.TextField', [], {}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
+        },
         u'contacts.userprofile': {
             'Meta': {'object_name': 'UserProfile'},
-            'gender': ('django.db.models.fields.CharField', [], {'max_length': '140'}),
+            'about': ('django.db.models.fields.CharField', [], {'max_length': '140'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'location': ('django.db.models.fields.CharField', [], {'max_length': '140'}),
             'reputation': ('django.db.models.fields.IntegerField', [], {'default': '1'}),
-            'user': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['auth.User']", 'unique': 'True'})
+            'user': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['auth.User']", 'unique': 'True'}),
+            'website': ('django.db.models.fields.URLField', [], {'max_length': '140'})
         },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
