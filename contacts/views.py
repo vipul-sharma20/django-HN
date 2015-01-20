@@ -4,8 +4,8 @@ from django.template import Context, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView
-from contacts.models import User, Contact, UserProfile, Articles, Like, Comment, News, NewsContent
-from contacts.forms import UserForm, PostArticleForm, CommentForm
+from contacts.models import User, Contact, UserProfile, Articles, Like, ContactUs, Comment, News, NewsContent
+from contacts.forms import ContactForm, UserForm, PostArticleForm, CommentForm
 from django.views.generic.edit import CreateView
 from django.contrib import auth
 from django.contrib.auth import get_user_model
@@ -35,12 +35,25 @@ class UserProfileDetailView(DetailView):
 
 def landing(request):
     name = 'Foo Bar'
+    context = RequestContext(request)
     t = get_template('landing.html')
-    if request.user.is_authenticated():
+    """if request.user.is_authenticated():
         #html = t.render(Context({'name': request.user.username}))
         return HttpResponseRedirect('/accounts/articles')
     else:
-        return render_to_response('landing.html')
+        return render_to_response('landing.html')"""
+    if request.method == 'POST':
+        print 'here'
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            temp = form.save(commit=True)
+            print temp
+            return render_to_response('landing.html', context)
+        else:
+            print form.errors
+    else:
+        form = ContactForm()
+    return render_to_response('landing.html', {'form': form}, context)
 
 def details(request, contact_id=1):
     return render_to_response('disp.html', {'contact': Contact.objects.get \

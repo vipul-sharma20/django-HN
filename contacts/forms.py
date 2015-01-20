@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from django import forms
-from contacts.models import Comment, Contact, UserProfile, Articles
+from contacts.models import Comment, Contact, UserProfile, Articles, ContactUs
 class DocumentForm(forms.Form):
 
     docfile = forms.FileField(
@@ -31,3 +31,8 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         exclude = ('user','article', 'date')
+
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model = ContactUs
