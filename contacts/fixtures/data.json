@@ -3,153 +3,171 @@
     "pk": 1, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Every Song Evan Spiegel\u2019s Ever Tweeted, In One\u00a0Playlist", 
-      "link": "http://techcrunch.com/2015/01/17/snapjams/", 
-      "timestamp": "2015-01-17"
+      "text": "SpaceX Raises $1 Billion In New Funding From Google And\u00a0Fidelity", 
+      "link": "http://techcrunch.com/2015/01/20/spacex-raises-1-billion-in-new-funding-from-google-and-fidelity/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 2, 
     "model": "contacts.news", 
     "fields": {
-      "text": "The Robots Are Coming \u2014 Aren\u2019t\u00a0They?", 
-      "link": "http://techcrunch.com/2015/01/17/the-robots-are-coming-arent-they/", 
-      "timestamp": "2015-01-17"
+      "text": "\u201cThe Interview\u201d Hits Netflix On\u00a0Saturday", 
+      "link": "http://techcrunch.com/2015/01/20/the-interview-hits-netflix-on-saturday/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 3, 
     "model": "contacts.news", 
     "fields": {
-      "text": "The Seed Bubble Has\u00a0Popped", 
-      "link": "http://techcrunch.com/2015/01/16/the-seed-bubble-has-popped/", 
-      "timestamp": "2015-01-16"
+      "text": "Netflix Beats The Street In Q4 By Adding 4.3M New Streaming Subscribers\u00a0Worldwide", 
+      "link": "http://techcrunch.com/2015/01/20/netflix-beats-the-street-in-the-fourth-quarter-by-adding-4-3-million-new-streaming-subscribers-worldwide/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 4, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Bitcoin Will Fix Remittances With Or Without The Western Unions Of The\u00a0World", 
-      "link": "http://techcrunch.com/2015/01/16/how-western-union-and-others-can-avoid-becoming-the-blockbuster-video-of-finance/", 
-      "timestamp": "2015-01-16"
+      "text": "Startup L. Jackson Speaks Out About Diversity, Cool Products, And All The People He\u2019s\u00a0Not", 
+      "link": "http://techcrunch.com/2015/01/20/startup-l-jackson-speaks-out-about-diversity-cool-products-and-all-the-people-hes-not/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 5, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Is In Talks With Mobile Payments Company\u00a0Softcard", 
-      "link": "http://techcrunch.com/2015/01/16/softcard/", 
-      "timestamp": "2015-01-16"
+      "text": "Facebook Banishes Hoaxes From The News\u00a0Feed", 
+      "link": "http://techcrunch.com/2015/01/20/because-we-blame-facebook/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 6, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Glass Is Not\u00a0Dead", 
-      "link": "http://techcrunch.com/2015/01/16/google-glass-is-not-dead/", 
-      "timestamp": "2015-01-16"
+      "text": "LendingRobot Scores $3M To Automate Investing On P2P Lending Platforms Lending Club And\u00a0Prosper", 
+      "link": "http://techcrunch.com/2015/01/20/lendingrobot/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 7, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Elon Musk Tries To Woo John Carmack Back To Rockets With SpaceX\u2019s Drone Ship\u00a0Impact", 
-      "link": "http://techcrunch.com/2015/01/16/elon-musk-tries-to-woo-john-carmack-back-to-rockets-with-spacexs-drone-ship-impact/", 
-      "timestamp": "2015-01-16"
+      "text": "DARPA\u2019s Incredible Humanoid Robot Can Now Walk On Its Own Two Feet, No Support\u00a0Required", 
+      "link": "http://techcrunch.com/2015/01/20/darpas-incredible-humanoid-robot-can-now-walk-on-its-own-two-feet-no-support-required/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 8, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Facebook Open-Sources Some Of Its Deep-Learning\u00a0Tools", 
-      "link": "http://techcrunch.com/2015/01/16/facebook-open-sources-some-of-its-deep-learning-tools/", 
-      "timestamp": "2015-01-16"
+      "text": "Updated Chrome For iOS App Gets Material Design, Support For\u00a0Handoff", 
+      "link": "http://techcrunch.com/2015/01/20/updated-chrome-for-ios-app-gets-material-design-support-for-handoff/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 9, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Glass Never Really Had A Fighting\u00a0Chance", 
-      "link": "http://techcrunch.com/2015/01/16/google-glass-never-really-had-a-fighting-chance/", 
-      "timestamp": "2015-01-16"
+      "text": "NBC Will Live Stream The Super Bowl For\u00a0Free", 
+      "link": "http://techcrunch.com/2015/01/20/nbc-will-live-stream-the-super-bowl-for-free/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 10, 
     "model": "contacts.news", 
     "fields": {
-      "text": "A Million-Dollar Robot Suit Is Available On Amazon\u00a0Japan", 
-      "link": "http://techcrunch.com/2015/01/16/a-million-dollar-robot-suit-is-available-on-amazon-japan/", 
-      "timestamp": "2015-01-16"
+      "text": "Pillow Raises $2.65 Million To Take The Friction Out Of Airbnb\u00a0Rentals", 
+      "link": "http://techcrunch.com/2015/01/20/pillow-2-65m/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 11, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Monument Valley Team Reveals The Cost And Reward Of Making A Hit iOS\u00a0Game", 
-      "link": "http://techcrunch.com/2015/01/15/monument-valley-team-reveals-the-cost-and-reward-of-making-a-hit-ios-game/", 
-      "timestamp": "2015-01-15"
+      "text": "Stack Exchange Raises $40M Led By A16Z To Boost Its Programmer\u00a0Forums", 
+      "link": "http://techcrunch.com/2015/01/20/stack-exchange-raises-40m-led-by-a16z-to-boost-its-programmer-forums/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 12, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Xiaomi Launches Mi Note Phablet To Fight The iPhone 6\u00a0Plus", 
-      "link": "http://techcrunch.com/2015/01/15/mi-note/", 
-      "timestamp": "2015-01-15"
+      "text": "With $1M In Funding, Farm Hill Aims To Deliver Delicious Healthy Meals In The\u00a0\u2018Burbs", 
+      "link": "http://techcrunch.com/2015/01/20/with-1m-in-funding-farm-hill-aims-to-deliver-delicious-healthy-meals-in-the-burbs/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 13, 
     "model": "contacts.news", 
     "fields": {
-      "text": "This Fake Phone Charger Is Actually Recording Every Key You\u00a0Type", 
-      "link": "http://techcrunch.com/2015/01/14/this-fake-phone-charger-is-actually-recording-every-key-you-type/", 
-      "timestamp": "2015-01-14"
+      "text": "This List Of 2014\u2019s Worst Passwords, Including \u2018123456,\u2019 Is\u00a0Embarrassing", 
+      "link": "http://techcrunch.com/2015/01/20/this-list-of-2014s-worst-passwords-including-123456-is-embarrassing/", 
+      "timestamp": "2015-01-20"
     }
   }, 
   {
     "pk": 14, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Facebook Unveils Facebook At Work, Lets Businesses Create Their Own Social\u00a0Networks", 
-      "link": "http://techcrunch.com/2015/01/14/facebook-at-work-ios-android/", 
-      "timestamp": "2015-01-14"
+      "text": "SoftBank Emerges As The Biggest Challenger To\u00a0Uber", 
+      "link": "http://techcrunch.com/2015/01/19/softbank-taxi-apps/", 
+      "timestamp": "2015-01-19"
     }
   }, 
   {
     "pk": 15, 
     "model": "contacts.news", 
     "fields": {
-      "text": "The New IBM z13 Is Not Your Father\u2019s\u00a0Mainframe", 
-      "link": "http://techcrunch.com/2015/01/13/the-new-ibm-z13-is-not-your-fathers-mainframe/", 
-      "timestamp": "2015-01-13"
+      "text": "Snapchat\u2019s Pricey Ads Could Be Too\u00a0Pricey", 
+      "link": "http://techcrunch.com/2015/01/19/you-could-get-so-much-more/", 
+      "timestamp": "2015-01-19"
     }
   }, 
   {
     "pk": 16, 
     "model": "contacts.news", 
     "fields": {
-      "text": "Google Domains Launches To All In U.S. With Support For Blogger Integration, Templates And More Domain\u00a0Endings", 
-      "link": "http://techcrunch.com/2015/01/13/google-domains-launches-to-all-in-u-s-with-support-for-blogger-integration-templates-and-more-domain-endings/", 
-      "timestamp": "2015-01-13"
+      "text": "How The Watch Industry Will Save\u00a0Itself", 
+      "link": "http://techcrunch.com/2015/01/19/how-the-watch-industry-can-save-itself/", 
+      "timestamp": "2015-01-19"
     }
   }, 
   {
     "pk": 17, 
     "model": "contacts.news", 
     "fields": {
-      "text": "East of Palo Alto\u2019s Eden: Race and The Formation of Silicon\u00a0Valley", 
-      "link": "http://techcrunch.com/2015/01/10/east-of-palo-altos-eden/", 
-      "timestamp": "2015-01-10"
+      "text": "This Is How Xiaomi Keeps The Cost Of Its Smartphones So\u00a0Low", 
+      "link": "http://techcrunch.com/2015/01/19/xiaomi-secret-sauce/", 
+      "timestamp": "2015-01-19"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "contacts.news", 
+    "fields": {
+      "text": "Plaxo Co-Founder Minh Nguyen Charged With\u00a0Murder", 
+      "link": "http://techcrunch.com/2015/01/18/plaxo-co-founder-charged-with-murder/", 
+      "timestamp": "2015-01-18"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "contacts.news", 
+    "fields": {
+      "text": "This Fake Phone Charger Is Actually Recording Every Key You\u00a0Type", 
+      "link": "http://techcrunch.com/2015/01/14/this-fake-phone-charger-is-actually-recording-every-key-you-type/", 
+      "timestamp": "2015-01-14"
     }
   }
 ]

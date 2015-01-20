@@ -1,9 +1,10 @@
 {% extends 'nav.html' %}
 {% load staticfiles %}
 {% block content %}
-</br></br></br>
+
+<h2 class='heading' align='center'>News</h2>
 <div>
-    <table class='table table-bordered'>
+    <table class='table table-bordered table-striped table-condensed articles' align='center'>
     {% for article in news %}
         <tr>
             <td>

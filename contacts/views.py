@@ -24,14 +24,14 @@ class UserProfileDetailView(DetailView):
     #queryset = User.objects.filter(sel)
     slug_field = "username"
     template_name= "user_detail.html"
+    model = get_user_model()
 
     def get_object(self, queryset=None):
-        queryset = User.objects.filter(username=self.request.user)
         user = super(UserProfileDetailView, self).get_object(queryset)
-        b = UserProfile.objects.get_or_create(user=user)
-        c = UserProfile.objects.filter(user=user)
-        print dir(c)
-        return c
+        UserProfile.objects.get_or_create(user=user)
+        b = UserProfile.objects.get(user=user)
+        print dir(b)
+        return b
 
 def landing(request):
     name = 'Foo Bar'
@@ -43,7 +43,6 @@ def landing(request):
     else:
         return render_to_response('landing.html')"""
     if request.method == 'POST':
-        print 'here'
         form = ContactForm(request.POST)
         if form.is_valid():
             temp = form.save(commit=True)
@@ -52,7 +51,10 @@ def landing(request):
         else:
             print form.errors
     else:
-        form = ContactForm()
+        if request.user.is_authenticated():
+            return HttpResponseRedirect('/accounts/articles')
+        else:
+            form = ContactForm()
     return render_to_response('landing.html', {'form': form}, context)
 
 def details(request, contact_id=1):
@@ -149,7 +151,7 @@ class UserProfileEditView(UpdateView):
 
     def get_object(self, queryset=None):
         a = UserProfile.objects.get(user=self.request.user)
-        print dir(a)
+        #print dir(a)
         return a
 
     def form_valid(self, form):
@@ -178,7 +180,7 @@ def article_view(request):
         rend.append(w)
         print w.description, w.score
 
-    print dir(UserProfile.objects.get(user=request.user))
+    #print dir(UserProfile.objects.get(user=request.user))
     return render_to_response('articles.html', {'posts':rend, \
             'full_name':request.user.username, 'now':now, \
             'reputation':UserProfile.objects.get(user=request.user).reputation}, \
@@ -255,18 +257,39 @@ def recent_comarticles(request):
     template = "recent_comm.html"
     comments = Comment.objects.order_by('date').reverse()
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
-    return render_to_response(template, {"comments":comments, "now":now}, RequestContext(request))
+    return render_to_response(template, {"comments":comments, "now":now}, \
+                                RequestContext(request))
 
 def news(request):
 
     template = "news.html"
     articles = News.objects.all()
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
-    return render_to_response(template, {'news':articles, 'now':now}, RequestContext(request))
+    return render_to_response(template, {'news':articles, 'now':now}, \
+                                        RequestContext(request))
 
 def newscontent(request, news_id):
 
     template = "content.html"
     content = NewsContent.objects.get(id=news_id)
-    print dir(content)
+    #print dir(content)
     return HttpResponse(content.content)
+
+def get_submissions(request, slug):
+
+    print 'something something'
+    template = 'submission.html'
+    user = User.objects.get(username=str(slug))
+    content = Articles.objects.filter(uploader=user)
+    print content
+    return render_to_response(template, {'articles':content, \
+                    'full_name':request.user.username}, RequestContext(request))
+
+def get_comments(request, slug):
+
+    template = 'user_comments.html'
+    user = User.objects.get(username=str(slug))
+    content = Comment.objects.filter(user=user)
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    return render_to_response(template, {'comments':content, \
+            'full_name':request.user.username, 'now':now}, RequestContext(request))

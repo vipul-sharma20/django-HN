@@ -11,9 +11,8 @@ class DocumentForm(forms.Form):
 
 class UserForm(forms.ModelForm):
 
-    location = forms.CharField(max_length=140, help_text="Location")
-    gender = forms.CharField(max_length=140, help_text="Gender")
-
+    about = forms.CharField(max_length=140, required=False)
+    website = forms.URLField(required=False)
     class Meta:
         model = UserProfile
         exclude = ("user","reputation")

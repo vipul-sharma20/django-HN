@@ -15,8 +15,8 @@ class Contact(models.Model):
 class UserProfile(models.Model):
 
     user = models.OneToOneField(User, unique=True)
-    location = models.CharField(max_length=140)
-    gender = models.CharField(max_length=140)
+    about = models.CharField(max_length=140)
+    website = models.URLField(max_length=140)
     reputation = models.IntegerField(default=1)
 
     def __str__(self):
