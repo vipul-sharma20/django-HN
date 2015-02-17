@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     url(r'^accounts/news/(?P<news_id>\d+)/$', 'contacts.views.newscontent'),
     url(r'accounts/articles/comments/newest/$', 'contacts.views.recent_comarticles'),
     url(r'accounts/news/$', 'contacts.views.news'),
+    url(r'^me/$', 'contacts.views.myself'),
     url(r'^$', 'contacts.views.landing'),
 
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

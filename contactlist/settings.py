@@ -24,6 +24,7 @@ LOGIN_EXEMPT_URLS = (
                     r'^index/$',
                     r'^admin/$',
                     r'^accounts/invalid/$',
+                    r'^me/$',
 	            r'^$',
                     )
 

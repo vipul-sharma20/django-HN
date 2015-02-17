@@ -293,3 +293,8 @@ def get_comments(request, slug):
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
     return render_to_response(template, {'comments':content, \
             'full_name':request.user.username, 'now':now}, RequestContext(request))
+
+def myself(request):
+
+    template = 'myself.html'
+    return render_to_response(template, RequestContext(request))
